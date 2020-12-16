@@ -94,6 +94,10 @@ ul{
     background-size: cover;
     height: 100vh;
     width: 100%;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;  
 }
 
 .intro-text {
@@ -193,4 +197,16 @@ ul{
     .main-text {
         margin-top: 5vh;
     }
+
+    .intro-text {
+        margin-top: 18vh;
+        transition: 0s ease;
+    }
+
+    .intro {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right 30% top; 
+    }
+    
 }
