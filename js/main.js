@@ -1,53 +1,91 @@
-$(window).scroll(function() {
-    parallax();
+// ---------------------------------------------
+// Hamburger Menu Code -------------------------
+// ---------------------------------------------
+
+const burgerMenu = document.querySelector('.burger-menu');
+const navLinks = document.querySelector('.nav-links');
+const links = document.querySelectorAll('.nav-links li');
+const l1 = document.querySelector('.l1');
+const l2 = document.querySelector('.l2');
+const l3 = document.querySelector('.l3');
+const link1 = document.querySelector('.link1');
+const link2 = document.querySelector('.link2');
+const link3 = document.querySelector('.link3');
+const link4 = document.querySelector('.link4');
+
+burgerMenu.addEventListener('click', ()=> {
+  navLinks.classList.toggle('open');
+
+  // links.forEach(link => {
+  //   link.classList.toggle('fade');
+  // })
+
+  l1.classList.toggle('active');
+  l2.classList.toggle('active');
+  l3.classList.toggle('active');
+});
+
+link1.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  links.forEach(link => {
+    link.classList.toggle('fade');
   })
+
+  l1.classList.toggle('active');
+  l2.classList.toggle('active');
+  l3.classList.toggle('active');
+})
+link2.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  links.forEach(link => {
+    link.classList.toggle('fade');
+  })
+
+  l1.classList.toggle('active');
+  l2.classList.toggle('active');
+  l3.classList.toggle('active');
+})
+link3.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  links.forEach(link => {
+    link.classList.toggle('fade');
+  })
+
+  l1.classList.toggle('active');
+  l2.classList.toggle('active');
+  l3.classList.toggle('active');
+})
+
+link4.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  links.forEach(link => {
+    link.classList.toggle('fade');
+  })
+
+  l1.classList.toggle('active');
+  l2.classList.toggle('active');
+  l3.classList.toggle('active');
+})
+
+// ========================================================
+// Parallax stuff
+// ========================================================
+$(window).scroll(function() {
+  parallax();
+})
+
+function parallax() {
+  var wScroll = $(window).scrollTop();
   
-  function parallax() {
-    var wScroll = $(window).scrollTop();
-    
-    $('.parallax-bg').css('background-position','left '+(wScroll*0.55)+'px')
-  
-    $('.parallax-bg2').css('background-position','center '+(wScroll*0.45)+'px')
-  
-    $('.parallax-bg3').css('letter-spacing' +(wScroll*0.8)+'px')
-  
-    $('.plax').css('transform', 'translate(0px,+'+(wScroll*0.85)+'px')
-    $('.plax1').css('transform', 'translate(0px,+'+(wScroll*0.6)+'px')
-    $('.plax2').css('transform', 'translate(0px,+'+(wScroll*0.1)+'px')
-    $('.plax3').css('transform', 'translate(0px,+'+(wScroll*0.7)+'px')
-    $('.plax4').css('transform', 'translate(0px,+'+(wScroll*1.7)+'px')
-  }
+  $('.parallax-bg').css('background-position','left '+(wScroll*0.55)+'px')
 
-//   ===================
-//   CLOCK
-//   ===================
+  $('.parallax-bg2').css('background-position','center '+(wScroll*0.45)+'px')
 
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 01, 2021 00:00:00").getTime();
+  $('.parallax-bg3').css('letter-spacing' +(wScroll*0.8)+'px')
 
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
+  $('.plax').css('transform', 'translate(0px,+'+(wScroll*0.25)+'px')
+  $('.plax1').css('transform', 'translate(0px,-'+(wScroll*0.2)+'px')
+  $('.plax2').css('transform', 'translate(0px,+'+(wScroll*0.3)+'px')
+  $('.plax3').css('transform', 'translate(0px,+'+(wScroll*0.55)+'px')
+  $('.plax4').css('transform', 'translate(0px,+'+(wScroll*0.55)+'px')
+}
